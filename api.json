@@ -1,0 +1,534 @@
+[
+{
+  "model": "api.contacts",
+  "pk": 1,
+  "fields": {
+    "role": "General Secretary",
+    "name": "Mr. Himanshu Sharma",
+    "phone": "+918279773316",
+    "email": "h.sharma@iitg.ac.in"
+  }
+},
+{
+  "model": "api.contacts",
+  "pk": 2,
+  "fields": {
+    "role": "Joint Secretary",
+    "name": "Mr. Aditya Jha",
+    "phone": "+916362321815",
+    "email": "aditya.jha@iitg.ac.in"
+  }
+},
+{
+  "model": "api.contacts",
+  "pk": 3,
+  "fields": {
+    "role": "SAB",
+    "name": "",
+    "phone": "",
+    "email": "sab@iitg.ac.in"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 3,
+  "fields": {
+    "name": "Prof. Rupam Barman",
+    "post": "Chairman, SAB and ADoAC(UG)",
+    "phone": "1",
+    "email": "adoaaug@iitg.ac.in",
+    "linkedin": "http://12.com",
+    "photo": "councils/rb2.jpeg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 4,
+  "fields": {
+    "name": "Mr. Himanshu Sharma",
+    "post": "General Secretary",
+    "phone": "+91 8279773316",
+    "email": "h.sharma@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/himanshu-sharma-19ba9011b/",
+    "photo": "councils/Himanshu_Sharma_GS.jpeg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 5,
+  "fields": {
+    "name": "Mr. Aditya Jha",
+    "post": "Joint Secretary",
+    "phone": "+91 6362321815",
+    "email": "aditya.jha@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/adijha30/",
+    "photo": "councils/Aditya_Jha_JS.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 6,
+  "fields": {
+    "name": "Mr. Kamal Kumar",
+    "post": "Student Convener - RIC",
+    "phone": "+91 7052021183",
+    "email": "kkumar@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/iitgkamal/",
+    "photo": "councils/Kamal_Kumar_StudentConvener_RIC.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 7,
+  "fields": {
+    "name": "Ms. Rupanjali Devi",
+    "post": "Doctoral Representative & Student Co-Convener (PG)-RIC",
+    "phone": "+91 9706202154",
+    "email": "d.rupanjali@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/rupanjali-devi-b724b5239/",
+    "photo": "councils/Rupanjali_Devi_DoctoralRep_and_StudentCoConvenerPG_RIC.jpeg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 8,
+  "fields": {
+    "name": "Mr. Onkar V. Kawade",
+    "post": "Student Co-Convener(UG)-RIC",
+    "phone": "+91 9322794214",
+    "email": "k.onkar@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/onkar-kawade-40a527282/",
+    "photo": "councils/Onkar_Student_CoConvener_UG_Research_Conclave.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 9,
+  "fields": {
+    "name": "Mr. Vivek Vardhan Setti",
+    "post": "Treasurer",
+    "phone": "+91 6302098035",
+    "email": "v.setti@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/vivek-vardhan-setti-724104259/",
+    "photo": "councils/Vivek_Vardhan_Setti_Treasurer.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 10,
+  "fields": {
+    "name": "Ms. Tanushri Barsainya",
+    "post": "Web Coordinator",
+    "phone": "+91 8602527383",
+    "email": "tanushri@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/tanushri1506/",
+    "photo": "councils/Tanushri_Barsainya_Web_Coordinator_Am4uv0X.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 11,
+  "fields": {
+    "name": "Mr. Vishesh Katiyar",
+    "post": "Graphics Designer",
+    "phone": "+91 7084415423",
+    "email": "v.katiyar@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/visheshkatiyar/",
+    "photo": "councils/VisheshKatiyar.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 12,
+  "fields": {
+    "name": "Mr. Nishant Kumar",
+    "post": "Events and Activities Coordinator",
+    "phone": "+91 6204696995",
+    "email": "nishantk2003@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/prathemesh-patil-50243729b",
+    "photo": "councils/Nishant_Kumar_EandA_Coordinator.jpeg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 13,
+  "fields": {
+    "name": "Mr. Subhrajit Mishra",
+    "post": "Language Cell Coordinator",
+    "phone": "+91 7609063630",
+    "email": "m.subhrajit@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/subhrajit-mishra-54736a376/",
+    "photo": "councils/Subhrajit_Mishra_Language_Cell_Coordinator.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 14,
+  "fields": {
+    "name": "Mr. Thomas Sophola",
+    "post": "Foreign Representative",
+    "phone": "+91 9839669567",
+    "email": "t.greg@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/thomas-sophola-b6772a338/",
+    "photo": "councils/Thomas_Sophola_Foreign_Rep.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 15,
+  "fields": {
+    "name": "Ms. Gayathri S",
+    "post": "M.A. Representative",
+    "phone": "+91 6238813895",
+    "email": "s.gayathri@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/gayathri-sreekumar-9178a6355/",
+    "photo": "councils/Gayathri_S_MA_Rep.jpeg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 16,
+  "fields": {
+    "name": "Mr. Anurag Singh",
+    "post": "MSc Representative",
+    "phone": "+91 6000646560",
+    "email": "anurags2009@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/anurag-singh-52b578281/",
+    "photo": "councils/Anurag_Singh_MSc_Rep.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 17,
+  "fields": {
+    "name": "Mr. Kumar Nilmani",
+    "post": "MBA Representative",
+    "phone": "+91 8981313729",
+    "email": "k.nilmani@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/kumar-nilmani-808a0714a/",
+    "photo": "councils/Kumar_Nilmani_MBA_Rep.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 18,
+  "fields": {
+    "name": "Mr. Harshvardhann",
+    "post": "MS(R) Representative",
+    "phone": "+91 9488640966",
+    "email": "harshvardhann@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/harshavardhann-r-g-1657a1204/",
+    "photo": "councils/Harshvardhann_MSR_Rep.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 19,
+  "fields": {
+    "name": "Mr. Jasvindar Singh",
+    "post": "B.Tech Representative",
+    "phone": "+91 7417294042",
+    "email": "s.jasvindar@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/jasvindarsingh/",
+    "photo": "councils/Jasvinder_Singh_BTech_Rep.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 20,
+  "fields": {
+    "name": "Mr. Aravind S.",
+    "post": "B.Des representative",
+    "phone": "+91 9025171770",
+    "email": "aravind.s@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/aravind-swaminathan-379aa12b1/",
+    "photo": "councils/Aravind_S_BDes_Rep.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 21,
+  "fields": {
+    "name": "Mr. Vipul Tiwari",
+    "post": "M.Tech Representative",
+    "phone": "+91 8770460151",
+    "email": "t.vipul@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/vipul-tiwari-248b6b226/",
+    "photo": "councils/Vipul_Tiwari_Mtech_Rep.jpg"
+  }
+},
+{
+  "model": "api.council",
+  "pk": 22,
+  "fields": {
+    "name": "Mr. Soumya Mondal",
+    "post": "M.Des Representative",
+    "phone": "+91 7076580724",
+    "email": "soumya.mondal@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/soumyamondal06/",
+    "photo": "councils/Soumya_Mondal_MDes_Rep.jpg"
+  }
+},
+{
+  "model": "api.events",
+  "pk": 1,
+  "fields": {
+    "title": "Research and Insustrial Conclave",
+    "url": "https://www.ric.iitg.ac.in/",
+    "icon": "events/e1.png"
+  }
+},
+{
+  "model": "api.events",
+  "pk": 2,
+  "fields": {
+    "title": "Workshops",
+    "url": "http://localhost:3000/workshops",
+    "icon": "events/e2.png"
+  }
+},
+{
+  "model": "api.events",
+  "pk": 3,
+  "fields": {
+    "title": "Lecture Series",
+    "url": "http://localhost:3000/lectures",
+    "icon": "events/e3.png"
+  }
+},
+{
+  "model": "api.events",
+  "pk": 4,
+  "fields": {
+    "title": "Language Courses",
+    "url": "http://localhost:3000/language",
+    "icon": "events/e4.png"
+  }
+},
+{
+  "model": "api.gallery",
+  "pk": 1,
+  "fields": {
+    "label": "1",
+    "image": "gallery/g1.jpg"
+  }
+},
+{
+  "model": "api.gallery",
+  "pk": 2,
+  "fields": {
+    "label": "2",
+    "image": "gallery/g2.jpg"
+  }
+},
+{
+  "model": "api.gallery",
+  "pk": 3,
+  "fields": {
+    "label": "3",
+    "image": "gallery/g3.jpg"
+  }
+},
+{
+  "model": "api.gallery",
+  "pk": 4,
+  "fields": {
+    "label": "4",
+    "image": "gallery/g4.jpg"
+  }
+},
+{
+  "model": "api.gallery",
+  "pk": 5,
+  "fields": {
+    "label": "5",
+    "image": "gallery/g5.jpg"
+  }
+},
+{
+  "model": "api.gallery",
+  "pk": 6,
+  "fields": {
+    "label": "6",
+    "image": "gallery/g6.jpg"
+  }
+},
+{
+  "model": "api.workshops",
+  "pk": 1,
+  "fields": {
+    "title": "Latex Workshop",
+    "photo": "workshops/w1.jpg",
+    "instructors": [
+      "Dr Anirban Dasgupta",
+      "Gangesh Gunjan"
+    ],
+    "mode": "Hybrid",
+    "date": "9-10 Sep, 2023",
+    "fees": "₹250",
+    "url": "http://www.google.com",
+    "schedule": [
+      {
+        "day": "Day 1",
+        "date": "09 September 2023",
+        "time": "10 AM - 4 PM"
+      },
+      {
+        "day": "Day 2",
+        "date": "10 September 2023",
+        "time": "10 AM - 4 PM"
+      }
+    ],
+    "highlights": [
+      "About LaTeX System",
+      "Expression and functions of every sign",
+      "How to structure your documents",
+      "How to visualize essential data",
+      "How to Upskill your presentation slides"
+    ],
+    "location": "Conference Centre, IIT Guwahati",
+    "benefits": "E-Certificates will be provided"
+  }
+},
+{
+  "model": "api.previousworkshops",
+  "pk": 3,
+  "fields": {
+    "title": "Figma Workshop",
+    "link": "https://www.youtube.com/embed/OuDOTfXKRPQ?si=zyBXNsPYkjzcWYBn",
+    "alt": "Video not available"
+  }
+},
+{
+  "model": "api.previousworkshops",
+  "pk": 4,
+  "fields": {
+    "title": "Python for Scientific Computing and Data Science",
+    "link": "https://www.youtube.com/embed/UXucMUwS1J0?si=UXQxW-SJw2yQPxFo",
+    "alt": "Video not available"
+  }
+},
+{
+  "model": "api.previousworkshops",
+  "pk": 5,
+  "fields": {
+    "title": "Data Analytics Workshop",
+    "link": "",
+    "alt": "This workshop was held offline"
+  }
+},
+{
+  "model": "api.previousworkshops",
+  "pk": 6,
+  "fields": {
+    "title": "Secrets to writing an excellent Statement of Purpose",
+    "link": "https://www.youtube.com/embed/YXM-sgqtbp8?si=klxge6g7FYwjoJ0r",
+    "alt": "Video not available"
+  }
+},
+{
+  "model": "api.previousworkshops",
+  "pk": 7,
+  "fields": {
+    "title": "Privacy Aware ML on Data you cannot see",
+    "link": "https://www.youtube.com/embed/Rf5w-p6iAAk?si=2865HbztSXE8-vWQ",
+    "alt": "Video not available"
+  }
+},
+{
+  "model": "api.previouslectures",
+  "pk": 1,
+  "fields": {
+    "title": "Webinar on TOEFL & GRE",
+    "link": "https://youtube.com/embed/q5n52V3KJgs",
+    "alt": "Video not available"
+  }
+},
+{
+  "model": "api.previouslectures",
+  "pk": 2,
+  "fields": {
+    "title": "Webinar on Life is Consulting",
+    "link": "https://youtube.com/embed/26fmkmf615Y",
+    "alt": "Video not available"
+  }
+},
+{
+  "model": "api.previouslectures",
+  "pk": 3,
+  "fields": {
+    "title": "Road map to web3, crypto, blockchain, metaverse",
+    "link": "https://youtube.com/embed/mfQXRC_rZ6A",
+    "alt": "Video not available"
+  }
+},
+{
+  "model": "api.previouslectures",
+  "pk": 4,
+  "fields": {
+    "title": "Talk on Machine Learning",
+    "link": "https://youtube.com/embed/BdrwlFNZ1GA",
+    "alt": "Video not available"
+  }
+},
+{
+  "model": "api.pal",
+  "pk": 1,
+  "fields": {
+    "name": "Mr. Himanshu Sharma",
+    "post": "General Secretary",
+    "phone": "+91 8279773316",
+    "email": "h.sharma@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/himanshu-sharma-19ba9011b/",
+    "photo": "pal/Himanshu_Sharma_GS.jpeg"
+  }
+},
+{
+  "model": "api.pal",
+  "pk": 2,
+  "fields": {
+    "name": "Mr. Aditya Jha",
+    "post": "Joint Secretary",
+    "phone": "+91 6362321815",
+    "email": "aditya.jha@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/adijha30/",
+    "photo": "pal/Aditya_Jha_JS.jpg"
+  }
+},
+{
+  "model": "api.pal",
+  "pk": 3,
+  "fields": {
+    "name": "Mr. Jasvindar Singh",
+    "post": "B.Tech Representative",
+    "phone": "+91 7417294042",
+    "email": "s.jasvindar@iitg.ac.in",
+    "linkedin": "https://www.linkedin.com/in/jasvindarsingh/",
+    "photo": "pal/Jasvinder_Singh_BTech_Rep.jpg"
+  }
+},
+{
+  "model": "api.languageteam",
+  "pk": 1,
+  "fields": {
+    "name": "Prof. Rupam Barman",
+    "post": "Chairman, SAB and ADoAC(UG)",
+    "phone": "",
+    "email": "adoaaug@iitg.ac.in",
+    "linkedin": "",
+    "photo": "language/rb2.jpeg"
+  }
+},
+{
+  "model": "api.languageteam",
+  "pk": 2,
+  "fields": {
+    "name": "Prof. Uday Shanker Dixit",
+    "post": "Patron HOC,Center for Indian Knowledge Systems",
+    "phone": "",
+    "email": "uday@iitg.ac.in",
+    "linkedin": "",
+    "photo": "language/uday.jpg"
+  }
+}
+]
