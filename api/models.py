@@ -26,6 +26,7 @@ class Council(models.Model):
     linkedin = models.URLField(blank=True)
     tenure = models.CharField(max_length=20)
     photo = models.ImageField(upload_to='council/', blank=True, null=True)
+    extra_por = models.TextField(blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Council"
@@ -52,6 +53,18 @@ class Gallery(models.Model):
 
     class Meta:
         verbose_name_plural = "Gallery"
+
+    def __str__(self):
+        return self.label
+    
+
+class GalleryPage(models.Model):
+    label = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='gallery-page/')
+    tenure = models.CharField(max_length=20)
+
+    class Meta:
+        verbose_name_plural = "GalleryPage"
 
     def __str__(self):
         return self.label
@@ -289,7 +302,8 @@ class Certificate(models.Model):
         ("workshops", "Workshops"),
         ("language", "Language"),
         ("sab-team", "SAB Team"),
-        ("ric-team","RIC Team")
+        ("ric-team","RIC Team"),
+        ("mentor","Mentor")
     ]
 
     TYPE_CHOICES = [
@@ -301,8 +315,9 @@ class Certificate(models.Model):
         ("SPPC", "SPPC Student Representative"),
         ("WORKSHOP", "Workshop Course"),
         ("LANGUAGE", "Language Course"),
-        ("EC", "SAB Executive Committee"),
-        ("RIC","RIC Executive Committee")
+        ("EC", "SAB Executive Council"),
+        ("RIC","RIC Executive Committee"),
+        ("MENTOR", "Mentor"),
     ]
 
     recipient_name = models.CharField(max_length=255)
@@ -311,6 +326,8 @@ class Certificate(models.Model):
     group = models.CharField(max_length=50, choices=GROUP_CHOICES)
     certificate_type = models.CharField(max_length=20, choices=TYPE_CHOICES)
     email = models.EmailField(blank=True)
+    signed_by = models.TextField(blank=True, null=True)
+
 
     session = models.CharField(max_length=50, help_text="Example: 2025-26")
     issue_date = models.DateField()
@@ -385,7 +402,8 @@ class Certificate(models.Model):
             "WORKSHOP": "certificate_workshop",
             "LANGUAGE": "certificate_language",
             "EC": "certificate_ec",
-            "RIC":"certificate_ric"
+            "RIC":"certificate_ric",
+            "MENTOR":"certificate_mentor"
         }
 
         prefix = type_map.get(self.certificate_type, "certificate")
@@ -445,7 +463,7 @@ import uuid
 class DataRequest(models.Model):
     REQUEST_TYPES = [
         ("BR", "Branch Representatives"),
-        ("DUPC", "DUPC Data"),
+        ("DUPC", "DUPC Student Representatives"),
         ("DPPC", "DPPC Student Representatives"),
         ("CPPC", "CPPC Student Representatives"),
         ("SPPC", "SPPC Student Representatives"),

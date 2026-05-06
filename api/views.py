@@ -1,5 +1,5 @@
 from rest_framework.generics import ListAPIView
-from .models import Contacts, Events,Council,Gallery,Workshops,Pal,PhdDPPC,PhdCPPC,PhdSPPC,UgCouncil,LanguageTeam,LanguageCourses,BranchRepresentative, Carousel,AcademicSession, DataRequest, Dupc, RICGallery, RICCouncil, Links
+from .models import Contacts, Events,Council,Gallery,GalleryPage, Workshops,Pal,PhdDPPC,PhdCPPC,PhdSPPC,UgCouncil,LanguageTeam,LanguageCourses,BranchRepresentative, Carousel,AcademicSession, DataRequest, Dupc, RICGallery, RICCouncil, Links
 from .serializers import (
     ContactsSerializer, 
     EventsSerializer, 
@@ -12,7 +12,7 @@ from .serializers import (
       LanguageCoursesSerializer,
       BranchRepresentativesSerializer, 
       CarouselSerializer, AcademicSessionSerializer, 
-      DupcSerializer,
+      DupcSerializer,GalleryPageSerializer,
       RICGallerySerializer, RICCouncilSerializer)
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -52,6 +52,24 @@ class CouncilListView(ListAPIView):
 
         return Council.objects.none()
 
+class GalleryPageView(ListAPIView):
+    queryset = GalleryPage.objects.all()
+    serializer_class = GalleryPageSerializer
+
+    def get_queryset(self):
+        tenure = self.request.GET.get("tenure")
+
+        if tenure == "all":
+            return GalleryPage.objects.all().order_by("-tenure")
+
+        if tenure:
+            return GalleryPage.objects.filter(tenure=tenure)
+
+        session = AcademicSession.objects.first()
+        if session:
+            return GalleryPage.objects.filter(tenure=session.current_year)
+
+        return GalleryPage.objects.none()
 
 
 class Gallery(ListAPIView):
@@ -199,11 +217,9 @@ def send_certificate_email(request):
 
         certificate = Certificate.objects.get(credential_id=credential_id)
 
-        # ❌ No email case
         if not certificate.email:
             return JsonResponse({"error": "No email registered"}, status=400)
 
-        # # ⏳ Weekly limit check
         if certificate.last_sent_at:
             if timezone.now() - certificate.last_sent_at < timedelta(days=7):
                 return JsonResponse(
@@ -211,12 +227,18 @@ def send_certificate_email(request):
                     status=429
                 )
 
-        # 📧 Send Email
         email = EmailMultiAlternatives(
             subject="Your Certificate from Students' Academic Board IITG",
             from_email=settings.EMAIL_HOST_USER,
             to=[certificate.email],
         )
+ 
+        special_types = ["BR", "DUPC", "DPPC", "CPPC", "SPPC"]
+
+        if certificate.certificate_type in special_types:
+            position_line = f"Position of Responsibility: {certificate.get_certificate_type_display()}, {certificate.designation}"
+        else:
+            position_line = f"Position of Responsibility: {certificate.designation}, {certificate.get_certificate_type_display()}"
 
         html_content = f"""
         <p>
@@ -225,28 +247,23 @@ def send_certificate_email(request):
 
         <p><b>Details</b><br>
         Name: {certificate.recipient_name}<br>
-        Position of Responsibility: Branch Representative, {certificate.designation}<br>
+        {position_line}<br>
         Tenure: {certificate.session}
         </p>
 
-        <p>
-        This is to certify that {certificate.recipient_name} has been working as a Branch Representative for the undergraduate branch of {certificate.designation} under the Students' Academic Board, IIT Guwahati.
-        </p>
+        <p> We sincerely acknowledge their dedication and valuable service to the Students' Academic Board during the stated tenure.</p>
 
         <p>Their contribution is duly recognised and appreciated.</p>
         """
 
-        # 🔥 Append signature
         html_content += get_sab_signature()
 
         email.attach_alternative(html_content, "text/html")
 
-        # Attach certificate
         email.attach_file(certificate.certificate_file.path)
 
         email.send()
 
-        # 🕒 Update timestamp
         certificate.last_sent_at = timezone.now()
         certificate.save()
 
@@ -292,6 +309,10 @@ from django.http import HttpResponse
 from .utils.data_generators import DATA_HANDLERS
 from django.core.mail import EmailMessage
 
+import os
+
+FRONTEND_BASE_URL = os.environ.get("FRONTEND_BASE_URL")
+
 @csrf_exempt
 def create_request(request):
     data = json.loads(request.body)
@@ -309,7 +330,7 @@ def create_request(request):
         session=session,
     )
 
-    approval_link = f"http://localhost:8000/api/approve/{req.id}/?token={req.token}"
+    approval_link = f"{FRONTEND_BASE_URL}/api/approve/{req.id}/?token={req.token}"
 
     html_content = f"""
 <b>This is an automated request from www.iitg.ac.in/sab</b><br><br>

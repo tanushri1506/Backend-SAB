@@ -1,7 +1,7 @@
 def get_sab_signature():
     return """
     <br><br>
-
+    <p><i>Thanks & Regards</i>,</p>
     <table style="font-family: Arial, sans-serif;">
         <tr>
             <!-- Logo -->
@@ -14,7 +14,6 @@ def get_sab_signature():
 
             <!-- Text -->
             <td style="vertical-align: middle; font-size:14px; color:#000;">
-                <p><i>Thanks & Regards</i>,</p>
                 <strong>छात्र शैक्षणिक बोर्ड / Students' Academic Board (SAB)</strong><br><br>
                 <i>SAB Office, New SAC<br>
                 Indian Institute of Technology, Guwahati<br>

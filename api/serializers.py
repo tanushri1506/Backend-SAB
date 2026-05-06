@@ -3,8 +3,7 @@ from rest_framework import serializers
 from .models import (
     Contacts, Events, Council, Gallery, Workshops, Pal, PhdDPPC, PhdCPPC, PhdSPPC,
     UgCouncil, LanguageTeam, LanguageCourses, BranchRepresentative, Carousel, AcademicSession,
-    Dupc, RICCouncil, RICGallery
-    # RICGallery
+    Dupc, RICCouncil, RICGallery, GalleryPage
 )
 
 
@@ -51,6 +50,21 @@ class GallerySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Gallery
+        fields = '__all__'
+
+    def get_image(self, obj):
+        request = self.context.get('request')
+        if obj.image and request:
+            return request.build_absolute_uri(obj.image.url)
+        elif obj.image:
+            return obj.image.url
+        return None
+
+class GalleryPageSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField()
+
+    class Meta:
+        model = GalleryPage
         fields = '__all__'
 
     def get_image(self, obj):
@@ -290,6 +304,7 @@ class CertificateSerializer(serializers.ModelSerializer):
             "public_url",
             "is_active",
             "is_verified",
+            "signed_by"
         ]
 
     def get_certificate_file(self, obj):

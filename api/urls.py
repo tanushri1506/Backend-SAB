@@ -6,7 +6,7 @@ from .views import (
     UgCouncil, PhdDPPC, PhdCPPC, PhdSPPC, LanguageTeam, LanguageCoursesView,
     BranchRepresentatives, CarouselListView, AcademicSessionView,
     CertificateDetailView, send_certificate_email, create_request, approve_request, DupcView,
-    RICGalleryView, RICCouncilListView, get_links
+    RICGalleryView, RICCouncilListView, get_links, GalleryPageView
 )
 
 urlpatterns = [
@@ -14,6 +14,7 @@ urlpatterns = [
     path('api/events/', Events.as_view(), name='events-list'),
     path('api/council/', CouncilListView.as_view(), name='team-list'),
     path('api/gallery/', Gallery.as_view(), name='gallery-list'),
+    path('api/gallery-page/', GalleryPageView.as_view(), name='gallery-page-list'),
     path('api/workshops/', WorkshopListView.as_view(), name='workshops-list'),
     path('api/pal/', Pal.as_view(), name='pal'),
     path('api/ug/', UgCouncil.as_view(), name='ug'),

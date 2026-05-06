@@ -21,7 +21,7 @@ EMAIL_TEMPLATE = """
 
     <p>
         We are pleased to formally acknowledge your service as the
-        <b>{role}</b> for the <b>{post} department</b> {tenure_text}.
+        <b>{role}</b> for the <b>{post}</b> {tenure_text}.
     </p>
 
     <p>
@@ -66,6 +66,6 @@ def send_ack_email(user):
         to=[user.email],
     )
 
-    email.content_subtype = "html"  # IMPORTANT
+    email.content_subtype = "html" 
 
     email.send()

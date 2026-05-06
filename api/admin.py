@@ -5,7 +5,7 @@ from .models import (
     PhdDPPC, PhdCPPC, PhdSPPC, LanguageTeam, LanguageCourses,
     BranchRepresentative, Carousel, AcademicSession, Certificate,
     Dupc,
-    RICGallery, RICCouncil, Links
+    RICGallery, RICCouncil, Links, GalleryPage
 )
 from .admin_mixins import SendMailAdminMixin
 
@@ -37,10 +37,15 @@ class PhdSPPCAdmin(SendMailAdminMixin,admin.ModelAdmin):
 
 
 @admin.register(Council)
-class CouncilAdmin(SendMailAdminMixin,admin.ModelAdmin):
-    list_display = ("name", "post", "tenure", "send_mail_button")
+class CouncilAdmin(admin.ModelAdmin):
+    list_display = ("name", "post", "tenure")
     list_filter = ("tenure",)
     search_fields = ("name", "post")
+
+@admin.register(GalleryPage)
+class GalleryPageAdmin(admin.ModelAdmin):
+    list_display = ("label", "tenure")
+    list_filter = ("tenure",)
 
 
 @admin.register(BranchRepresentative)
@@ -106,7 +111,7 @@ class CertificateAdmin(admin.ModelAdmin):
             "fields": ("recipient_name", "designation","email")
         }),
         ("Certificate Details", {
-            "fields": ("group", "certificate_type", "session", "issue_date", "certificate_number")
+            "fields": ("group", "certificate_type", "session", "issue_date", "certificate_number", "signed_by")
         }),
         ("Final Certificate Upload", {
             "fields": ("certificate_file",)
